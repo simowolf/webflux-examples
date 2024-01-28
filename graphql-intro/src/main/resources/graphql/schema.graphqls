@@ -1,0 +1,35 @@
+type Query  {
+    persons : [Person]
+    personsByName (name: String) : [Person]
+    personsBySurname (surname : String) : [Person]
+    personsByNameAndSurname (name : String, surname : String) : [Person]
+}
+
+type Mutation {
+    addPerson (name : String, surname : String) : Person
+}
+
+type Subscription {
+    personEvents(id : ID) : PersonEvent
+}
+
+type PersonEvent {
+    person: Person
+    event: PersonEventType
+}
+
+enum PersonEventType {
+    CREATED, UPDATED
+}
+
+type Person {
+    id: ID
+    name: String
+    surname: String
+    orders: [Order]
+}
+
+type Order {
+    id: ID
+    personId: ID
+}
