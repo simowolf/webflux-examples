@@ -9,7 +9,7 @@
         <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.inpeco.training</groupId>
+    <groupId>com.demo.training</groupId>
     <artifactId>client-http</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>client-http</name>
