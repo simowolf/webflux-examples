@@ -27,7 +27,7 @@ public class SampleDataInitializer {
     public void ready() {
 
         Flux<Person> persons =
-                this.personService.saveAll("Simone,Lupo", "Giulio,Giorgio", "Bill,Mono", "Claudio,Mattioni", "Luca,Romitelli");
+                this.personService.saveAll("Mario,Rossi", "Giuseppe,Verdi", "Giovanni,Gialli", "Lorenzo,Bianchi", "Pietro,Neri");
 
         log.info("This is on main thread!!");
 

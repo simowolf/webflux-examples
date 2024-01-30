@@ -22,7 +22,7 @@ public class SampleDataInitializer {
     public void ready() {
 
         Flux<Person> persons = Flux
-                .just("Simone,Lupo", "Giulio,Giorgio", "Bill,Mono", "Claudio,Mattioni", "Luca,Romitelli")
+                .just("Mario,Rossi", "Giuseppe,Verdi", "Giovanni,Gialli", "Lorenzo,Bianchi", "Pietro,Neri")
                 .map(name -> new Person(null, name.split(",")[0], name.split(",")[1]))
                 .flatMap(this.personRepository::save);
 

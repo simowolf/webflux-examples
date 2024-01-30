@@ -21,7 +21,7 @@ import java.util.stream.Stream;
 public class PersonClient {
 
     public PersonClient() {
-        Flux.just("Simone,Lupo", "Giulio,Giorgio", "Bill,Mono", "Claudio,Mattioni", "Luca,Romitelli")
+        Flux.just("Mario,Rossi", "Giuseppe,Verdi", "Giovanni,Gialli", "Lorenzo,Bianchi", "Pietro,Neri")
                 .flatMap(name -> addPerson(name.split(",")[0], name.split(",")[1]))
                 .subscribe(person -> {
                     var list = this.db.get(person);
