@@ -69,12 +69,10 @@ public class PersonClient {
 
     public Flux<PersonEvent> getPersonEvents(Integer personId) {
         return getPersonById(personId)
-                .flatMapMany(person -> {
-                    return Flux.fromStream(Stream.generate(() -> {
-                        var event = Math.random() > .5 ? PersonEventType.UPDATED : PersonEventType.CREATED;
-                        return new PersonEvent(person, event);
-                    }));
-                })
+                .flatMapMany(person -> Flux.fromStream(Stream.generate(() -> {
+                    var event = Math.random() > .5 ? PersonEventType.UPDATED : PersonEventType.CREATED;
+                    return new PersonEvent(person, event);
+                })))
                 .take(10)
                 .delayElements(Duration.ofSeconds(1));
     }

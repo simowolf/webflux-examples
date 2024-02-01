@@ -39,6 +39,11 @@ public class PersonGraphqlController {
         return this.personClient.getPersonsByNameAndSurname(name, surname);
     }
 
+    @QueryMapping
+    Mono<Person> personById(@Argument Integer id) {
+        return this.personClient.getPersonById(id);
+    }
+
     @SchemaMapping(typeName = "Person")
     Flux<Order> orders(Person person) {
         return this.personClient.getOrdersForPersonId(person.id());

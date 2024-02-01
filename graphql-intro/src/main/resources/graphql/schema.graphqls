@@ -1,5 +1,6 @@
 type Query  {
     persons : [Person]
+    personById (id : ID): Person
     personsByName (name: String) : [Person]
     personsBySurname (surname : String) : [Person]
     personsByNameAndSurname (name : String, surname : String) : [Person]
